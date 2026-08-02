@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synthesise AI · Your AI Business Coach. In your pocket. 24/7.</title>
+<meta name="description" content="The AI business coach that already knows your business, remembers every conversation, and helps you make better decisions before helping you build the content, offers and campaigns to scale your coaching business. Only 20 Founder spots available.">
+
+<link rel="stylesheet" href="https://use.typekit.net/gsy0lao.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg-primary: #F9F4F2;
+  --bg-secondary: #E7E0DA;
+  --bg-elevated: #F0EBE3;
+  --text-primary: #181910;
+  --text-secondary: #8A7F75;
+  --text-muted: #9A9485;
+  --border: #D8D2CB;
+  --border-hover: #C8C2BB;
+  --icon: #53524B;
+  --accent: #F2A33B;
+  --accent-hover: #E8952A;
+  --accent-subtle: rgba(242, 163, 59, 0.08);
+  --shadow-sm: 0 1px 4px rgba(24, 25, 16, 0.06);
+  --shadow-md: 0 2px 12px rgba(24, 25, 16, 0.08);
+  --shadow-lg: 0 8px 32px rgba(24, 25, 16, 0.12);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 999px;
+}
+
+* { box-sizing: border-box; scrollbar-width: none; -ms-overflow-style: none; }
+*::-webkit-scrollbar { display: none; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "DM Sans", sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Background texture */
+.bg-layer { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+
+.bg-dots {
+  background-image: radial-gradient(circle, var(--icon) 1px, transparent 1px);
+  background-size: 14px 14px;
+  opacity: 0.10;
+}
+
+.bg-blobs {
+  background:
+    radial-gradient(ellipse 700px 500px at 10% 15%, rgba(242,163,59,0.07), transparent),
+    radial-gradient(ellipse 500px 600px at 90% 80%, rgba(242,163,59,0.05), transparent),
+    radial-gradient(ellipse 400px 350px at 65% 25%, rgba(242,163,59,0.04), transparent);
+}
+
+/* Layout */
+main, header, footer { position: relative; z-index: 1; }
+
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+section { padding: 80px 0; position: relative; z-index: 1; }
+section.tight { padding: 56px 0; }
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: "alverata", serif;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(38px, 6vw, 64px);
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: clamp(30px, 4.4vw, 46px);
+  line-height: 1.12;
+}
+
+h3 {
+  font-size: clamp(22px, 2.4vw, 28px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h4 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+p { margin: 0 0 16px 0; color: var(--text-primary); }
+p.lead { font-size: 20px; line-height: 1.6; color: var(--text-primary); }
+p.secondary { font-size: 15px; color: var(--text-secondary); line-height: 1.6; }
+
+.label {
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+.label.accent { color: var(--accent); }
+
+strong, b { font-weight: 600; }
+em { font-style: italic; color: var(--text-primary); }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 16px 28px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 150ms ease, transform 100ms ease, box-shadow 150ms ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--text-primary);
+  box-shadow: 0 4px 14px rgba(242,163,59,0.35);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(242,163,59,0.4);
+}
+
+.btn-lg { padding: 18px 36px; font-size: 17px; }
+.btn-xl { padding: 22px 48px; font-size: 19px; }
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.badge-accent {
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border: 1px solid rgba(242,163,59,0.20);
+}
+
+.badge-live::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(242,163,59,0.6);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(242,163,59,0.6); }
+  70% { box-shadow: 0 0 0 8px rgba(242,163,59,0); }
+  100% { box-shadow: 0 0 0 0 rgba(242,163,59,0); }
+}
+
+/* Cards */
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.card-interactive:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.card-elevated { background: var(--bg-elevated); }
+
+/* HERO */
+.hero {
+  padding: 90px 0 60px;
+  text-align: center;
+  position: relative;
+}
+
+.hero .container-narrow > * { margin-left: auto; margin-right: auto; }
+
+.hero h1 {
+  margin-top: 20px;
+  margin-bottom: 24px;
+}
+
+.hero .tm { font-size: 0.5em; vertical-align: top; opacity: 0.7; font-weight: 500; }
+
+.hero-sub {
+  font-size: clamp(17px, 2vw, 22px);
+  line-height: 1.5;
+  color: var(--text-primary);
+  max-width: 680px;
+  margin: 0 auto 32px;
+  font-weight: 400;
+}
+
+.hero-cta-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+/* Pain-point chips */
+.pain-chips {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 24px auto 0;
+  max-width: 700px;
+}
+
+.pain-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(220, 50, 50, 0.06);
+  border: 1px solid rgba(220, 50, 50, 0.18);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pain-chip::before {
+  content: "✕";
+  color: #C03030;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* Feature bar */
+.feature-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.feature-item {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px 26px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.feature-check {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent-subtle);
+  border: 1px solid rgba(242, 163, 59, 0.30);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.feature-text {
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--text-primary);
+  padding-top: 4px;
+}
+
+/* Prose */
+.prose p { font-size: 18px; line-height: 1.7; margin-bottom: 18px; }
+
+/* Section header */
+.section-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 56px;
+}
+
+.section-head .label { margin-bottom: 14px; display: inline-block; }
+.section-head h2 { margin-bottom: 16px; }
+.section-head p { font-size: 19px; color: var(--text-secondary); line-height: 1.6; }
+
+/* Callout */
+.callout {
+  background: var(--accent-subtle);
+  border: 1px solid rgba(242, 163, 59, 0.25);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-lg);
+  padding: 36px 40px;
+  margin: 48px 0;
+  box-shadow: var(--shadow-md);
+}
+
+.callout .callout-headline {
+  font-family: "alverata", serif;
+  font-size: clamp(22px, 2.6vw, 28px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--text-primary);
+  margin: 0 0 18px 0;
+  display: block;
+}
+
+.callout p {
+  font-size: 18px;
+  line-height: 1.65;
+  margin: 0 0 12px 0;
+  color: var(--text-primary);
+}
+
+.callout p:last-child { margin-bottom: 0; }
+
+@media (max-width: 600px) {
+  .callout { padding: 28px 24px; margin: 36px 0; }
+}
+
+/* Compare cards (Version A vs B) */
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 48px 0;
+}
+
+.compare .card { padding: 32px; }
+
+.compare .card-label {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 18px;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.compare .card-label.accent {
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border-color: rgba(242,163,59,0.25);
+}
+
+.compare h3 { margin-bottom: 14px; }
+
+.compare p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.compare p:last-child { margin-bottom: 0; }
+
+/* Proof / stats bar */
+.proof-bar {
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin: 40px auto 0;
+  max-width: 880px;
+  padding: 28px 20px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.proof-item {
+  flex: 1;
+  min-width: 180px;
+  padding: 8px 20px;
+  text-align: center;
+}
+
+.proof-num {
+  font-family: "alverata", serif;
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+  display: block;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.proof-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.proof-divider {
+  width: 1px;
+  background: var(--border);
+  align-self: stretch;
+}
+
+@media (max-width: 600px) {
+  .proof-item { flex: 0 0 100%; padding: 12px 0; }
+  .proof-divider { display: none; }
+}
+
+/* Don't need / not for you list */
+.dont-need-list {
+  list-style: none;
+  padding: 0;
+  margin: 32px 0;
+}
+
+.dont-need-list li {
+  padding: 14px 20px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-secondary);
+}
+
+.dont-need-list li::before {
+  content: "✕";
+  color: #C03030;
+  font-weight: 600;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* Steps (Your First 10 Minutes) */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 48px 0;
+}
+
+.step {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--accent-subtle);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "alverata", serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  border: 1px solid rgba(242,163,59,0.20);
+}
+
+.step h3 {
+  font-family: "alverata", serif;
+  font-size: clamp(20px, 2.2vw, 24px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.step p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .steps { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .steps { grid-template-columns: 1fr; }
+}
+
+/* Team specialist cards */
+.team {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+
+.specialist {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.specialist .specialist-name {
+  font-family: "alverata", serif;
+  font-size: clamp(20px, 2.2vw, 24px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin: 0 0 6px 0;
+  line-height: 1.2;
+}
+
+.specialist .specialist-tag {
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  font-style: italic;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+.specialist p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.specialist .tm { font-size: 0.6em; vertical-align: top; opacity: 0.7; font-weight: 500; }
+
+@media (max-width: 900px) {
+  .team { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .team { grid-template-columns: 1fr; }
+}
+
+/* Comparison table */
+.compare-table-wrap {
+  max-width: 900px;
+  margin: 48px auto 0;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background: var(--bg-secondary);
+  box-shadow: var(--shadow-md);
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "DM Sans", sans-serif;
+}
+
+.compare-table thead th {
+  padding: 20px 24px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid var(--border);
+}
+
+.compare-table thead th:first-child {
+  color: var(--text-secondary);
+  background: var(--bg-elevated);
+}
+
+.compare-table thead th:last-child {
+  color: var(--accent);
+  background: var(--accent-subtle);
+  border-left: 1px solid var(--border);
+}
+
+.compare-table tbody td {
+  padding: 18px 24px;
+  font-size: 15px;
+  line-height: 1.5;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+  width: 50%;
+}
+
+.compare-table tbody tr:last-child td { border-bottom: none; }
+
+.compare-table tbody td:first-child {
+  color: var(--text-secondary);
+  background: rgba(220, 50, 50, 0.03);
+}
+
+.compare-table tbody td:last-child {
+  color: var(--text-primary);
+  background: rgba(242, 163, 59, 0.04);
+  border-left: 1px solid var(--border);
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .compare-table thead th,
+  .compare-table tbody td { padding: 14px 16px; font-size: 14px; }
+}
+
+/* What Would You Pay section */
+.pay-list {
+  list-style: none;
+  padding: 0;
+  margin: 32px 0;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pay-list li {
+  padding: 12px 0;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.pay-list li:last-child { border-bottom: none; }
+
+.pay-list li::before {
+  content: "→";
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 16px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+/* Founder / pricing card */
+.founder-card {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.founder-card::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(242,163,59,0.15), transparent 70%);
+  pointer-events: none;
+}
+
+.founder-scarcity {
+  display: inline-block;
+  padding: 6px 14px;
+  background: var(--accent);
+  color: var(--text-primary);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.founder-price {
+  font-family: "alverata", serif;
+  font-size: 76px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--text-primary);
+  margin: 0;
+  position: relative;
+}
+
+.founder-price .dollar { font-size: 0.5em; vertical-align: top; margin-right: 4px; color: var(--text-secondary); }
+.founder-price .period { font-size: 0.28em; color: var(--text-secondary); font-weight: 500; letter-spacing: 0; margin-left: 4px; }
+
+.founder-price-sub {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+.founder-includes {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 32px;
+  text-align: left;
+  display: inline-block;
+}
+
+.founder-includes li {
+  padding: 8px 0;
+  font-size: 16px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.founder-includes li::before {
+  content: "✓";
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* FAQs */
+.faqs {
+  max-width: 780px;
+  margin: 48px auto 0;
+}
+
+.faq {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.faq[open] {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.faq summary {
+  padding: 22px 26px;
+  cursor: pointer;
+  font-family: "alverata", serif;
+  font-size: clamp(17px, 1.8vw, 20px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  line-height: 1.3;
+}
+
+.faq summary::-webkit-details-marker { display: none; }
+
+.faq summary::after {
+  content: "+";
+  font-family: "DM Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--accent);
+  transition: transform 200ms ease;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.faq[open] summary::after {
+  content: "−";
+}
+
+.faq-body {
+  padding: 0 26px 24px 26px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-primary);
+}
+
+.faq-body p { margin-bottom: 12px; }
+.faq-body p:last-child { margin-bottom: 0; }
+
+/* CTA row helper */
+.cta-block {
+  text-align: center;
+  padding: 40px 0 0;
+}
+
+.cta-block .btn { margin-top: 8px; }
+
+.cta-block .cta-caption {
+  display: block;
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* Divider */
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Footer */
+footer {
+  padding: 48px 0 40px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  margin-top: 40px;
+}
+
+footer .secondary { font-size: 13px; color: var(--text-muted); }
+
+/* Focus */
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-subtle), 0 0 0 4px var(--accent);
+  border-radius: var(--radius-sm);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .compare { grid-template-columns: 1fr; }
+  .feature-bar { grid-template-columns: 1fr; }
+  section { padding: 64px 0; }
+  .hero { padding: 64px 0 48px; }
+}
+
+@media (max-width: 600px) {
+  .container, .container-narrow { padding: 0 20px; }
+  section { padding: 56px 0; }
+  .hero { padding: 48px 0 40px; }
+  .hero-cta-row .btn { width: 100%; }
+  .founder-card { padding: 32px 24px; }
+  .founder-price { font-size: 60px; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-layer bg-blobs"></div>
+<div class="bg-layer bg-dots"></div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container-narrow">
+    <span class="badge badge-accent badge-live">Only 20 Founder Spots Available</span>
+    <h1>Your AI Business Coach.<br>In your pocket. 24/7.</h1>
+    <p class="hero-sub">The AI business coach that already knows your business, remembers every conversation, and helps you make better decisions before helping you build the content, offers and campaigns to scale your coaching business.</p>
+    <div class="hero-cta-row">
+      <a href="#what-would-you-pay" class="btn btn-primary btn-lg">Save my Founder spot</a>
+    </div>
+    <div class="pain-chips">
+      <span class="pain-chip">No repeating yourself</span>
+      <span class="pain-chip">No copy &amp; paste prompts</span>
+      <span class="pain-chip">Zero wasted time on AI that doesn't get results</span>
+    </div>
+  </div>
+</header>
+
+<!-- WHAT IT DOES (feature bar) -->
+<section class="tight">
+  <div class="container">
+    <div class="feature-bar">
+      <div class="feature-item">
+        <div class="feature-check">✓</div>
+        <div class="feature-text">Knows your business, goals and previous conversations.</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-check">✓</div>
+        <div class="feature-text">Challenges your thinking like a real coach.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- TWO VERSIONS OF COACHING -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="label">The gap</span>
+      <h2>There are two versions of coaching.</h2>
+      <p>And you've probably only ever had the first one.</p>
+    </div>
+
+    <div class="compare" style="max-width: 960px; margin-left: auto; margin-right: auto;">
+      <div class="card">
+        <span class="card-label">Version A</span>
+        <h3>The weekly call.</h3>
+        <p>You get a call once a week, once a fortnight, maybe once a month.</p>
+        <p>You spend the first ten minutes catching them up on everything that's happened since you last spoke. They give you advice based on those ten minutes. Then you go away for another seven days, and you stop existing to them until your name shows up in their calendar again.</p>
+        <p>It's not that it doesn't work. It does, sort of. It's just the advice you get is running off a snapshot. A tiny slice of your situation, described by you, on a day when you might not even know what the real problem is.</p>
+      </div>
+
+      <div class="card">
+        <span class="card-label accent">Version B</span>
+        <h3>The one in your pocket.</h3>
+        <p>Same coach. Except they're in your pocket 24/7 and you speak every single day.</p>
+        <p>You tell them everything. What's working, what isn't, what you're avoiding, what you said you'd do on Monday and still haven't done by Friday. They push back. They ask you things you'd never think to ask yourself. They make you sit with the real stuff you'd rather skip past.</p>
+        <p>And they do that <em>every day, for thirty days</em>.</p>
+      </div>
+    </div>
+
+    <div class="container-narrow prose" style="padding: 0; margin-top: 24px;">
+      <p>Then at the end they say something like:</p>
+      <p><em>"Remember that conversation twelve days ago where you told me your main focus was X? Then for the next two weeks you did these three things instead. Here's the impact that had."</em></p>
+      <p>Or:</p>
+      <p><em>"The reason you're attracting these clients is because you didn't use the framework we mapped out together on (date). You used the old one on your sales page."</em></p>
+      <p><strong>That's the difference.</strong> Version A gives you advice based on a snapshot. Version B gives you advice based on real context.</p>
+      <p>Imagine the 30 days turns into 60, then 90, then 6 months. And by then you're making more progress than you ever have, not because the advice got better, but because nothing gets lost anymore.</p>
+      <p>They remember the thing you briefly mentioned eleven weeks ago that turned out to be the root problem of everything. They keep you focused on the two actions that actually move the needle, so you stop redesigning your funnel for the fourth time this year.</p>
+      <p>And when life happens, because it does, they don't hand you a random, shiny new plan. They adjust the one you're already in, exactly the way you'd do it yourself, if you knew what to do.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SECOND BRAIN -->
+<section>
+  <div class="container-narrow prose">
+    <div class="callout">
+      <span class="callout-headline">At that point they're not really a coach anymore. They're your second brain.</span>
+      <p>A second brain trained on the frameworks, principles and lessons that made them millions, and made their students millions more.</p>
+    </div>
+
+    <p class="lead" style="text-align: center; margin-top: 40px;"><strong>So here's my question…</strong></p>
+    <p class="lead" style="text-align: center;">What would you pay someone to do that for you? Every day. For six months. Never forgetting a word.</p>
+    <p class="lead" style="text-align: center; color: var(--accent); font-weight: 600;">Get a number in your head. Got it?</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SYNTHESISE AI REVEAL -->
+<section>
+  <div class="container-narrow prose">
+    <div class="section-head">
+      <span class="label accent">The part you're not going to believe</span>
+      <h2>That's what Synthesise AI does.</h2>
+    </div>
+
+    <p class="lead" style="text-align: center;">I've built it. All of it.</p>
+    <p>The check-ins, the memory, the challenges, the reviews that pull up what you said and what you actually did.</p>
+
+    <div class="callout">
+      <span class="callout-headline">For about the price of a coffee a day.</span>
+      <p>I know how that sounds. It sounds too good to be true. That's exactly why I built Synthesise AI, because no one else was crazy enough to do it.</p>
+    </div>
+
+    <div class="cta-block">
+      <a href="#what-would-you-pay" class="btn btn-primary btn-lg">Save my Founder spot</a>
+      <span class="cta-caption">Only 20 Founder spots available</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WHY I BUILT -->
+<section>
+  <div class="container-narrow prose">
+    <div class="section-head">
+      <span class="label">The origin</span>
+      <h2>Why I built Synthesise AI.</h2>
+    </div>
+
+    <p>I've been in this coaching space for 5 years now. Made $2.5M myself, $6.5M for students in over 103 different niches, across every continent of the world (except Antarctica).</p>
+    <p>I'm not bragging. I just want you to understand I know what it takes to scale your coaching business, before AI existed.</p>
+    <p>And with AI in the pocket of every creator, I can see how it still hasn't fixed the one thing that <em>actually</em> creates results, until now.</p>
+    <p><strong>AI output keeps getting better, but most people's businesses are not.</strong></p>
+    <p>Everyone's using custom GPTs, Claude Projects, prompt libraries, agents, automations…</p>
+    <p>Yet I find myself being asked the exact same questions.</p>
+    <p style="text-align: center; font-style: italic; color: var(--text-secondary); margin: 24px 0;">"Harry… What should I actually focus on? Is this any good?"</p>
+    <p>That's when I realised…</p>
+
+    <div class="callout">
+      <span class="callout-headline">AI has solved execution. It hasn't solved judgement, the thing that actually matters.</span>
+      <p>So instead of building another group of tools you don't actually need, I built Synthesise AI.</p>
+    </div>
+
+    <div class="proof-bar">
+      <div class="proof-item">
+        <span class="proof-num">$2.5M</span>
+        <span class="proof-label">generated<br>personally</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <span class="proof-num">$6.5M</span>
+        <span class="proof-label">generated<br>for students</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <span class="proof-num">103</span>
+        <span class="proof-label">niches<br>across 6 continents</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WHAT IS SYNTHESISE AI -->
+<section>
+  <div class="container-narrow prose">
+    <div class="section-head">
+      <span class="label accent">The product</span>
+      <h2>What is Synthesise AI?</h2>
+    </div>
+
+    <p>Imagine if I became your AI business coach.</p>
+    <p>Not a chatbot. Not a prompt library. Not another collection of AI tools you'll use once and forget about.</p>
+    <p>Imagine if you could message me whenever you wanted…</p>
+    <p>Ask me to review your offer. Challenge your current positioning. Help you write tomorrow's content. Spot the blind spots in your sales page. Build your next campaign. Or simply ask…</p>
+    <p style="text-align: center; font-style: italic; font-size: 20px; margin: 24px 0;">"What should I focus on today?"</p>
+    <p>Now imagine… I already knew your business. Your offers. Your audience. Your goals. Your messaging. Everything we'd ever discussed.</p>
+    <p>So instead of spending twenty minutes explaining your situation… you simply asked the question.</p>
+
+    <div class="callout">
+      <span class="callout-headline">That's Synthesise AI.</span>
+      <p>It's the closest thing to having my coaching brain available 24 hours a day.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- NOT FOR YOU -->
+<section>
+  <div class="container-narrow prose">
+    <div class="section-head">
+      <h2>This probably isn't for you.</h2>
+      <p>Synthesise AI won't be a good fit if…</p>
+    </div>
+
+    <ul class="dont-need-list">
+      <li>You're looking for a button that builds a million-dollar business for you.</li>
+      <li>You don't want to think, learn or improve your own judgement.</li>
+      <li>You're hoping AI will replace the work required to actually build a great business.</li>
+      <li>You're looking for more "copy &amp; paste prompts" to add to your collection.</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- YOUR FIRST 10 MINUTES -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="label accent">The onboarding</span>
+      <h2>Your first 10 minutes inside Synthesise AI.</h2>
+      <p>You won't be dropped into a dashboard full of tools and left wondering where to start. Instead, you'll be guided through the exact same process I'd take you through if we were working together one-on-one.</p>
+    </div>
+
+    <div class="steps">
+      <div class="card step card-interactive">
+        <div class="step-num">1</div>
+        <h3>Build Your Business Brain</h3>
+        <p>Everything starts with your Signal Report. In around 10 minutes, you'll teach Synthesise AI about your business — where you are today, where you want to go, what's already working, and what's standing in the way. From that point on, every specialist understands your business. You explain it once. Never again.</p>
+      </div>
+
+      <div class="card step card-interactive">
+        <div class="step-num">2</div>
+        <h3>Get Your Personalised Roadmap</h3>
+        <p>HarryAI analyses your Business Brain to identify the biggest bottleneck holding you back. Then it builds a roadmap around your unique business. Not generic advice. Not someone else's strategy. A clear plan based on your goals, your strengths, and your next best move.</p>
+      </div>
+
+      <div class="card step card-interactive">
+        <div class="step-num">3</div>
+        <h3>Get Coached Every Day</h3>
+        <p>Ask questions. Upload your work. Challenge ideas. Review your offers. Stay accountable. Every conversation builds on the last, so your coaching becomes more valuable over time, not less.</p>
+      </div>
+
+      <div class="card step card-interactive">
+        <div class="step-num">4</div>
+        <h3>Build With Context</h3>
+        <p>Once the strategy is clear, your execution specialists help you bring it to life. Create content. Build offers. Launch campaigns. Refine your messaging. Everything is created with your Business Brain already loaded. Which doesn't just make it faster. It makes it better.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- TWO TYPES OF SUPPORT -->
+<section>
+  <div class="container-narrow prose">
+    <div class="section-head">
+      <h2>Every business needs two types of support.</h2>
+      <p>Someone to help you decide what to do next. And someone to help you do it.</p>
+    </div>
+
+    <div class="callout">
+      <span class="callout-headline">Most AI only gives you the second. Synthesise AI gives you both.</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- STRATEGY TEAM -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="label accent">Meet your team</span>
+      <h2>Your Strategy specialists help you think.</h2>
+      <p>So before you spend time building anything, you'll know if it's actually the right move and what "good" looks like.</p>
+    </div>
+
+    <div class="team">
+      <div class="card specialist card-interactive">
+        <h3 class="specialist-name">HarryAI</h3>
+        <div class="specialist-tag">Your AI Business Coach.</div>
+        <p>Every conversation starts here. Brain dump an idea. Ask a question. Challenge your thinking. Upload something you've created. Or simply ask "what should I focus on today?" HarryAI already knows your business, your roadmap and every conversation you've had, so instead of giving generic advice, it points you toward the next decision most likely to move your business forward. If another specialist can help you better, HarryAI introduces you.</p>
+      </div>
+
+      <div class="card specialist card-interactive">
+        <h3 class="specialist-name">Signal<span class="tm">™</span></h3>
+        <div class="specialist-tag">Your Messaging &amp; Positioning Strategist.</div>
+        <p>Every business grows or plateaus because of its positioning. That's why every new member starts here. Signal guides you through a 4-Phase process to strategise your entire Messaging &amp; Content Operating System, so every conversation from then on produces outputs designed to attract your premium Soulmate Clients. Strategise this once, and it's used forever.</p>
+      </div>
+
+      <div class="card specialist card-interactive">
+        <h3 class="specialist-name">Blind Spot<span class="tm">™</span></h3>
+        <div class="specialist-tag">The Coach That Sees What You Can't.</div>
+        <p>Sometimes the thing holding your business back is the one thing you're convinced isn't the problem. Blind Spot reviews anything you give it through the lens of everything I teach. It tells you what's working, what you've overlooked, what you're overcomplicating, the one thing to fix first, and suggests the specialist to fix it. Bonus: it helps you get better at seeing your own blind spots.</p>
+      </div>
+
+      <div class="card specialist card-interactive">
+        <h3 class="specialist-name">Money Ideas<span class="tm">™</span></h3>
+        <div class="specialist-tag">Turn Your Ideas Into Intellectual Property People Pay For.</div>
+        <p>Most coaches don't struggle because they lack knowledge. They struggle because they sound like everyone else. Money Ideas helps you turn your ideas into intellectual property people can't stop repeating. Frameworks. Models. Metaphors. Concepts. The kind of IP that makes people say "I've never thought about it like that before." Because the best clients don't buy programs until they've bought into the idea first.</p>
+      </div>
+
+      <div class="card specialist card-interactive">
+        <h3 class="specialist-name">Buyer Flywheel<span class="tm">™</span></h3>
+        <div class="specialist-tag">Turn Followers Into Low then High Ticket Buyers.</div>
+        <p>Maps your entire Follower to Low Ticket purchase to High Ticket upsell pipeline. Your auto-pilot pipeline to scale your business even when you're not online.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- EXECUTION TEAM -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="label accent">Meet your team</span>
+      <h2>Your Execution specialists get to work.</h2>
+      <p>Thinking is only half the job. Once you've decided what to build, these specialists bring it to life.</p>
+    </div>
+
+    <div class="team">
+      <div class="card specialist card-interactive">
+        <h3 class="specialist-name">Universal Offer<span class="tm">™</span></h3>
+        <div class="specialist-tag">Build the signature offers your business revolves around.</div>
+        <p>Create something new or refine what already exists. Design offers that are genuinely easy to say yes to, and built to scale without working yourself into the ground.</p>
+      </div>
+
+      <div class="card specialist card-interactive">
+        <h3 class="specialist-name">Soul Content<span class="tm">™</span></h3>
+        <div class="specialist-tag">Create &amp; audit content that attracts your Soulmate Clients.</div>
+        <p>Soul Content writes using everything your Business Brain already knows about your audience, positioning and voice. No more "AI slop" that sounds like everyone else. Scripts that only you could write, and that move only the right people.</p>
+      </div>
+
+      <div class="card specialist card-interactive">
+        <h3 class="specialist-name">Cash Campaign<span class="tm">™</span></h3>
+        <div class="specialist-tag">Launch your next sales campaign.</div>
+        <p>Whether you need a cash injection, want to fill your next program or revive an existing offer, Cash Campaign builds the strategy, the timeline and the assets to make it happen.</p>
+      </div>
+
+      <div class="card specialist card-interactive">
+        <h3 class="specialist-name">Daily Lead Engine<span class="tm">™</span></h3>
+        <div class="specialist-tag">Never wonder what to market or sell today.</div>
+        <p>Creates a personalised rhythm of offers, stories, emails and content that keeps leads showing up in your DMs, without relying on launches or constantly inventing something new.</p>
+      </div>
+
+      <div class="card specialist card-interactive">
+        <h3 class="specialist-name">IG Stories<span class="tm">™</span> &amp; Bio Builder<span class="tm">™</span></h3>
+        <div class="specialist-tag">Turn your Instagram profile into a client attraction system.</div>
+        <p>From optimising your bio to scripting stories that naturally start conversations, these specialists help your profile do more than retain followers. They help it generate buyers.</p>
+      </div>
+
+      <div class="card specialist card-interactive">
+        <h3 class="specialist-name">Bridge Magnet<span class="tm">™</span> &amp; Activation Offer<span class="tm">™</span></h3>
+        <div class="specialist-tag">Not another "freebie" for people who were never going to pay you anyway.</div>
+        <p>Create belief-shifting lead magnets, low-ticket activation offers and the stepping stones that naturally move someone from finding you to becoming a client.</p>
+      </div>
+    </div>
+
+    <div class="container-narrow prose" style="padding: 0; margin-top: 48px; text-align: center;">
+      <p class="lead"><strong>Simply ask the question. Your AI coaching team takes it from there.</strong></p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROOF -->
+<section>
+  <div class="container-narrow prose">
+    <div class="section-head">
+      <span class="label accent">The proof</span>
+      <h2>Built on a coaching system that's already worked.</h2>
+      <p>Before I ever started building Synthesise AI, these frameworks were already helping coaches around the world simplify their businesses, attract better clients and generate over $6.5M in client wins.</p>
+    </div>
+
+    <p style="text-align: center; color: var(--text-muted); font-style: italic;">Synthesise AI isn't trying to replace that coaching. It's designed to make it available every day, whenever you need it.</p>
+
+    <div class="callout" style="text-align: center;">
+      <span class="callout-headline" style="margin-bottom: 8px;">[ Proof placeholders — testimonials to slot in here ]</span>
+      <p style="color: var(--text-secondary);">Drop in Slack/DM screenshots or written testimonials to plug into this section.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CTA -->
+<section class="tight">
+  <div class="container">
+    <div class="cta-block" style="padding: 0;">
+      <a href="#what-would-you-pay" class="btn btn-primary btn-lg">Save my Founder spot</a>
+      <span class="cta-caption">Only 20 Founder spots available</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- COMPARISON TABLE -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="label">The difference</span>
+      <h2>Synthesise AI doesn't just give you better outputs. It improves the thinking that creates them.</h2>
+    </div>
+
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Most AI</th>
+            <th>Synthesise AI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Helps you create faster</td>
+            <td>Helps you decide what deserves creating</td>
+          </tr>
+          <tr>
+            <td>Assumes your prompt is correct</td>
+            <td>Challenges your thinking before it builds</td>
+          </tr>
+          <tr>
+            <td>Learns your documents</td>
+            <td>Learns your business, your goals and the way you work</td>
+          </tr>
+          <tr>
+            <td>Gives templated answers</td>
+            <td>Coaches you with answers and lessons</td>
+          </tr>
+          <tr>
+            <td>Starts from zero each project</td>
+            <td>Builds on every conversation</td>
+          </tr>
+          <tr>
+            <td>Trained on general information</td>
+            <td>Built on a proven coaching methodology refined through hundreds of real coaching businesses</td>
+          </tr>
+          <tr>
+            <td>Generates assets</td>
+            <td>Generates assets &amp; improves your judgement</td>
+          </tr>
+          <tr>
+            <td>Makes you dependent on better prompts</td>
+            <td>Makes you a better business owner</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WHAT WOULD YOU PAY (ANCHOR) -->
+<section id="what-would-you-pay" style="scroll-margin-top: 24px;">
+  <div class="container-narrow prose">
+    <div class="section-head">
+      <span class="label accent">The real question</span>
+      <h2>What would you pay for someone to do this?</h2>
+      <p>Imagine having someone who…</p>
+    </div>
+
+    <ul class="pay-list">
+      <li>Remembers every conversation you've ever had.</li>
+      <li>Knows your business inside out.</li>
+      <li>Keeps you focused on what actually matters.</li>
+      <li>Challenges your thinking before you waste weeks building the wrong thing.</li>
+      <li>Reviews your work whenever you need them.</li>
+      <li>Helps you make better decisions every single day.</li>
+      <li>Never forgets. Never takes a holiday. Never says "let's pick this up next week."</li>
+    </ul>
+
+    <p class="lead" style="text-align: center; margin-top: 32px;"><strong>What would you honestly expect to pay for that?</strong></p>
+    <p class="lead" style="text-align: center; color: var(--accent); font-weight: 600;">Get a number in your head.</p>
+  </div>
+</section>
+
+<!-- FOUNDER ACCESS -->
+<section class="tight">
+  <div class="container">
+    <div class="section-head">
+      <span class="label accent">Founder access</span>
+      <h2>Right now, there are 20 Founder spots.</h2>
+    </div>
+
+    <div class="card founder-card">
+      <span class="founder-scarcity">20 Founder Spots</span>
+      <div class="founder-price"><span class="dollar">$</span>100<span class="period">/mo</span></div>
+      <div class="founder-price-sub">Lifetime Founder pricing. Cancel whenever.</div>
+
+      <ul class="founder-includes">
+        <li>Access to your complete Synthesise AI coaching team</li>
+        <li>Every current and future specialist included</li>
+        <li>Lifetime Founder pricing, as long as you remain a member</li>
+        <li>Direct input into the future of Synthesise AI as we continue building it</li>
+      </ul>
+
+      <div>
+        <a href="https://buy.stripe.com/14A3cvbRL35E7gi8HydUY24" class="btn btn-primary btn-xl">Save my Founder spot</a>
+      </div>
+      <p class="secondary" style="margin-top: 18px;">No contracts. No hidden upgrades. No paying extra every time we release something new.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CLOSING LINE -->
+<section>
+  <div class="container-narrow prose">
+    <div class="callout" style="text-align: center;">
+      <span class="callout-headline" style="font-size: clamp(24px, 3vw, 32px);">The coaches making the most don't have the best AI. They make the best decisions with it.</span>
+      <p style="text-align: center;">Synthesise AI plugs that gap.</p>
+    </div>
+
+    <div class="cta-block">
+      <a href="https://buy.stripe.com/14A3cvbRL35E7gi8HydUY24" class="btn btn-primary btn-lg">Save my Founder spot</a>
+      <span class="cta-caption">$100/mo · Lifetime Founder pricing · Cancel anytime</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="label">FAQs</span>
+      <h2>Questions worth answering.</h2>
+    </div>
+
+    <div class="faqs">
+      <details class="faq">
+        <summary>Is this just ChatGPT?</summary>
+        <div class="faq-body">
+          <p>No. ChatGPT is a blank slate that forgets you the moment you close the tab.</p>
+          <p>Synthesise AI is the opposite: it rebuilds your messaging and positioning to top-1% level first, then learns your business more deeply every time you use it. Every tool works from your actual offer, your Soulmate Client, your voice, and your goals, not a generic prompt.</p>
+          <p>And it is built on a curriculum responsible for $6.5M in client wins across 103 niches, so every answer is pulled from a proven system, not guessed from the internet.</p>
+          <p><strong>ChatGPT gives you a smart assistant. Synthesise AI gives you a strategist that knows your business.</strong></p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>What if I already use Claude Projects and custom GPTs?</summary>
+        <div class="faq-body">
+          <p>Then you already know the ceiling. You have felt the work it takes to keep them updated, the way they drift, and how you are still the one supplying all the strategy and structure.</p>
+          <p>Synthesise AI removes that work. You do not maintain it, it maintains itself, learning from every conversation, output, and asset you create inside it.</p>
+          <p>And it is not a general assistant you have to teach how to market a coaching business. It comes pre-loaded with a proven methodology and a set of specialist tools built for exactly this.</p>
+          <p><strong>You have been doing the platform's job by hand. This is the platform doing it for you.</strong></p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>Will it replace coaching?</summary>
+        <div class="faq-body">
+          <p>No, and it is not trying to.</p>
+          <p>What it does is give you a level of proximity that human coaching cannot. Your coach sees a slice of your business for an hour at a time. Synthesise AI remembers everything — every goal, every output, every problem — and compounds it, so in time it knows your business better than any coach could.</p>
+          <p>Think of it as the thing that makes your coaching, your strategy, and your execution sharper — always on, always aware of your full picture. It does not replace the human relationship. It replaces the guesswork between sessions.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>Do I need to use every specialist?</summary>
+        <div class="faq-body">
+          <p>Not at all. The tools are there for when you need them, not a checklist to complete.</p>
+          <p>Some months you will live in Cash Campaign and Daily Lead Engine. Other months it is all offers and content. HarryAI, your strategist inside the platform, tells you what to focus on based on where your business actually is, so you are never guessing which tool to open.</p>
+          <p><strong>Use what moves the needle now. The rest are there the moment you need them.</strong></p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>Can I use it with ChatGPT?</summary>
+        <div class="faq-body">
+          <p>You can, but you will quickly find you do not want to. The whole point of Synthesise AI is that it already knows your business, so you are not copying and pasting context, re-explaining your offer, or fixing generic output every time.</p>
+          <p>Most coaches who switch stop reaching for ChatGPT for anything strategic, because doing it in Synthesise AI is faster and the output is already in their voice and built on their business.</p>
+          <p>Keep ChatGPT for the odd general task if you like. For your marketing, offers, and content, this is the upgrade.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>How often is my roadmap updated?</summary>
+        <div class="faq-body">
+          <p>Your roadmap is built for you the moment you onboard, tailored to your specific bottleneck, capacity, and goals.</p>
+          <p>From there it stays current with you. You can update it any time by talking to HarryAI, which reads your progress and adjusts your plan on the spot. Your monthly Signal report keeps recalibrating where you should focus next based on what you actually did.</p>
+          <p><strong>It's not a static document you set once and forget. It's a living plan that moves as you move.</strong></p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>What if my business changes?</summary>
+        <div class="faq-body">
+          <p>Then the platform changes with you. Because it learns from everything you do inside it, a shift in your offer, your niche, or your positioning gets absorbed as you work, not through some manual reset.</p>
+          <p>Pivoting to a new offer? Build it in Universal Offer and the rest of the platform starts working from it. Changed your Soulmate Client? Update your Business Brain and every tool reflects it.</p>
+          <p>Most tools get worse as your business evolves. This one keeps up, because keeping up is the whole design.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>Can I cancel?</summary>
+        <div class="faq-body">
+          <p>Yes, any time. There are no lock-in contracts.</p>
+          <p>As a founding member you keep your $100 rate for as long as you stay, and if it is ever not right for you, you cancel and that is it.</p>
+          <p>The only thing worth knowing: founder pricing and the first 20 spots do not come back. If you leave and return later, it will be at the standard rate.</p>
+          <p><strong>Stay because it is working, not because you are trapped.</strong></p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>How much time does it take to set up?</summary>
+        <div class="faq-body">
+          <p>Less than you think, and the setup itself is the value.</p>
+          <p>When you onboard, the platform walks you through building your Business Brain and rebuilding your messaging and positioning to top-1% level. That is not admin, that is the work most coaches never sit down and do properly.</p>
+          <p>By the end you have a personalised roadmap and a platform that already knows your business. From there, there is nothing to maintain. It learns as you use it.</p>
+          <p>So the "setup" is not a chore you get through to reach the good part. It is the foundation that makes everything the platform builds for you actually good.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>What if I'm not techy?</summary>
+        <div class="faq-body">
+          <p>Then you are exactly who this is built for. Synthesise AI is made for coaches, not engineers.</p>
+          <p>There is nothing to configure, no prompts to engineer, no integrations to wire up. You talk to it like you would talk to a smart member of your team, and it does the work.</p>
+          <p><strong>If you can send a voice note and click a button, you can run this. The whole point is that it removes complexity, not adds it. You bring your business. It handles the rest.</strong></p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FINAL CTA -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="label accent">Founder pricing</span>
+      <h2>Save your Founder spot before they're gone.</h2>
+      <p>Only 20 spots. Lifetime Founder pricing at $100/mo, as long as you remain a member.</p>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="https://buy.stripe.com/14A3cvbRL35E7gi8HydUY24" class="btn btn-primary btn-xl">Save my Founder spot</a>
+      <p class="secondary" style="margin-top: 18px;">Cancel anytime. No contracts. No hidden upgrades.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container-narrow">
+    <p class="secondary">© <span id="year"></span> Harry Needham. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

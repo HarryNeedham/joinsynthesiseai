@@ -1,0 +1,21 @@
+# Secrets — never commit
+*.pem
+*.key
+.env
+.env.*
+client_secret_*.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor / tooling
+.claude/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
